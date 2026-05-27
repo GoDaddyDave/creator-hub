@@ -164,7 +164,7 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.15rem;
       }
 
@@ -185,7 +185,6 @@
       .card h3 {
         margin: 0 0 0.75rem;
         font-size: 1.25rem;
-        text-align: center;
       }
 
       .card p {
@@ -193,7 +192,6 @@
         color: #a8a8a8;
         line-height: 1.65;
         font-size: 0.98rem;
-        text-align: center;
       }
 
       .media-grid {
@@ -235,7 +233,6 @@
       .media-copy h3 {
         margin: 0 0 0.55rem;
         font-size: 1.28rem;
-        text-align: center;
       }
 
       .media-copy p {
@@ -244,7 +241,6 @@
         color: #a8a8a8;
         line-height: 1.65;
         font-size: 0.98rem;
-        text-align: center;
       }
 
       .pricing {
@@ -254,6 +250,7 @@
       }
 
       .price-card {
+        position: relative;
         background: linear-gradient(180deg, #121212, #0b0b0b);
         border: 1px solid #222;
         border-radius: 24px;
@@ -261,10 +258,26 @@
         text-align: center;
       }
 
+      .popular {
+        border-color: #666;
+        transform: scale(1.02);
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: white;
+        color: black;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+
       .price-card h3 {
         margin: 0;
         font-size: 1.45rem;
-        text-align: center;
       }
 
       .price {
@@ -272,7 +285,6 @@
         font-size: 2.25rem;
         font-weight: 900;
         letter-spacing: -0.05em;
-        text-align: center;
       }
 
       .price-card ul {
@@ -311,6 +323,14 @@
         border-color: #777;
       }
 
+      footer {
+        border-top: 1px solid #1a1a1a;
+        padding: 2rem;
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
       @media (max-width: 780px) {
         .section {
           padding: 4.75rem 0;
@@ -326,6 +346,10 @@
         .media-card.large video {
           height: 240px;
         }
+
+        .popular {
+          transform: none;
+        }
       }
     </style>
   </head>
@@ -337,19 +361,19 @@
       </video>
 
       <div class="hero-content">
-        <div class="eyebrow">Creator Media Systems</div>
+        <div class="eyebrow">Cinematic AI Commercial Creative</div>
 
-        <h1>AI-Powered Media Systems for Creators</h1>
+        <h1>AI Video Commercials for Brands</h1>
 
         <p>
-          Promo campaigns, creator branding, livestream systems, cinematic AI
-          visuals, sonic branding, and media infrastructure for modern creator
-          brands.
+          Monthly retainer-based cinematic ad creative for businesses running
+          paid social. Fresh 15–30 second video spots every month — no
+          production team required.
         </p>
 
         <div class="buttons">
           <a href="#work" class="button primary">View Work</a>
-          <a href="#contact" class="button secondary">Contact</a>
+          <a href="#contact" class="button secondary">Book A Call</a>
         </div>
       </div>
     </section>
@@ -359,42 +383,37 @@
         <h2>What I Build</h2>
 
         <p>
-          Creator-focused media assets and systems built for livestreams,
-          educational brands, podcasts, creator communities, and online media
-          ecosystems.
+          Cinematic AI commercial creative for brands running paid social ads
+          across Facebook, Instagram, YouTube, and short-form platforms.
         </p>
       </div>
 
       <div class="grid">
         <div class="card">
-          <h3>AI Promo Campaigns</h3>
+          <h3>AI Video Commercials</h3>
+
           <p>
-            Cinematic creator promos, livestream intros, sponsor ads, launch
-            campaigns, and short-form promotional systems.
+            Monthly ad creative for businesses running Facebook, Instagram,
+            and YouTube ads. Fresh 15s and 30s cinematic spots — custom to
+            your brand, delivered monthly.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Spec Ad Previews</h3>
+
+          <p>
+            Not sure what you'd get? I build a real 15-second spec ad for
+            your brand before you commit to anything. See the work first.
           </p>
         </div>
 
         <div class="card">
           <h3>Sonic Branding</h3>
-          <p>
-            Creator songs, recurring music identity, meme tracks, and branded
-            intro systems.
-          </p>
-        </div>
 
-        <div class="card">
-          <h3>Livestream Systems</h3>
           <p>
-            Dashboards, overlays, layouts, and visual infrastructure for live
-            creators.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>NotebookLM Cinematics</h3>
-          <p>
-            Research-backed cinematic AI workflows, educational systems, and
-            structured media prep.
+            Custom music and sound identity for brands that want a complete
+            audio-visual package.
           </p>
         </div>
       </div>
@@ -405,22 +424,35 @@
         <h2>Featured Work</h2>
 
         <p>
-          Real creator systems developed across active channels, livestreams,
-          creator brands, and AI-assisted media ecosystems.
+          Real spec ads and commercial creative built for Houston-area
+          businesses and creator brands.
         </p>
       </div>
 
       <div class="media-grid">
-        <div class="media-card large">
-          <video controls playsinline>
-            <source src="/videos/promo-bgt.mp4" type="video/mp4" />
-          </video>
+        <div class="media-card">
+          <img src="/images/notebooklm.png" alt="Milk and Honey Spa Spec Ad" />
 
           <div class="media-copy">
-            <h3>Creator Promo Systems</h3>
+            <h3>Milk + Honey Spa — Spec Ad</h3>
+
             <p>
-              Cinematic promotional assets built for livestreams, creator
-              brands, and community engagement.
+              Custom 15-second cinematic spec ad built for Milk + Honey Houston.
+              Character-consistent AI video with branded ingredient, voiceover,
+              and membership offer.
+            </p>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <img src="/images/banners.png" alt="SkinSpirit Spec Ad" />
+
+          <div class="media-copy">
+            <h3>SkinSpirit — Spec Ad</h3>
+
+            <p>
+              15-second cinematic spec ad for SkinSpirit Rice Village.
+              Built from brand photography ingredients in Google Flow / Veo 3.
             </p>
           </div>
         </div>
@@ -430,9 +462,10 @@
 
           <div class="media-copy">
             <h3>Livestream Dashboard</h3>
+
             <p>
-              Real-world broadcast dashboard system used for recurring
-              livestream production.
+              Supporting portfolio work showcasing branded visual systems,
+              recurring production layouts, and organized broadcast flow.
             </p>
           </div>
         </div>
@@ -442,44 +475,10 @@
 
           <div class="media-copy">
             <h3>Sonic Branding</h3>
+
             <p>
-              15+ custom songs deployed across multiple channels, shows, and
-              creator ecosystems.
-            </p>
-          </div>
-        </div>
-
-        <div class="media-card">
-          <img src="/images/notebooklm.png" alt="NotebookLM cinematic workflow" />
-
-          <div class="media-copy">
-            <h3>NotebookLM Cinematics</h3>
-            <p>
-              AI-assisted cinematic educational systems built from structured
-              research workflows.
-            </p>
-          </div>
-        </div>
-
-        <div class="media-card">
-          <img src="/images/mascot.png" alt="Mascot and identity system" />
-
-          <div class="media-copy">
-            <h3>Mascots & Identity Systems</h3>
-            <p>
-              Recurring creator visuals, characters, and ecosystem branding.
-            </p>
-          </div>
-        </div>
-
-        <div class="media-card">
-          <img src="/images/banners.png" alt="Banners and visual systems" />
-
-          <div class="media-copy">
-            <h3>Banners & Visual Systems</h3>
-            <p>
-              Creator branding assets, overlays, banners, and visual identity
-              packages.
+              Custom songs, branded sound identity, and recurring audio systems
+              developed across multiple creator and business ecosystems.
             </p>
           </div>
         </div>
@@ -488,54 +487,60 @@
 
     <section class="section">
       <div class="section-header">
-        <h2>Packages</h2>
+        <h2>Monthly Retainers</h2>
 
         <p>
-          Flexible creator-focused packages built around branding, promotional
-          systems, and media infrastructure.
+          Built for businesses already spending on ads that need fresh creative
+          every month without hiring a production team.
         </p>
       </div>
 
       <div class="pricing">
         <div class="price-card">
-          <h3>Promo Campaigns</h3>
+          <h3>Starter</h3>
 
-          <div class="price">$500+</div>
+          <div class="price">$1,000/mo</div>
 
           <ul>
-            <li>15s and 30s promos</li>
-            <li>2–4 minute cinematic promos</li>
-            <li>Livestream intros</li>
-            <li>Sponsor creatives</li>
-            <li>Paid promotion assets</li>
+            <li>2 fresh video ads per month</li>
+            <li>15s + 30s formats</li>
+            <li>1 revision round each</li>
+            <li>Music included</li>
+            <li>Delivered by the 10th</li>
+            <li>3-month minimum</li>
+          </ul>
+        </div>
+
+        <div class="price-card popular">
+          <div class="popular-badge">Most Popular</div>
+
+          <h3>Growth</h3>
+
+          <div class="price">$2,500/mo</div>
+
+          <ul>
+            <li>4 ads per month</li>
+            <li>Weekly delivery cadence</li>
+            <li>15s, 30s, and social cuts</li>
+            <li>2 revision rounds each</li>
+            <li>Priority 48-hour turnaround</li>
+            <li>Sonic branding included</li>
+            <li>3-month minimum</li>
           </ul>
         </div>
 
         <div class="price-card">
-          <h3>Creator Branding</h3>
+          <h3>Full System</h3>
 
-          <div class="price">$1,200+</div>
-
-          <ul>
-            <li>Overlays and banners</li>
-            <li>Mascots and logos</li>
-            <li>Visual identity systems</li>
-            <li>Sonic branding</li>
-            <li>Brand ecosystem direction</li>
-          </ul>
-        </div>
-
-        <div class="price-card">
-          <h3>Media Systems</h3>
-
-          <div class="price">$1,500+</div>
+          <div class="price">$5,000/mo</div>
 
           <ul>
-            <li>NotebookLM workflows</li>
-            <li>Research systems</li>
-            <li>Dashboard systems</li>
-            <li>Content pipelines</li>
-            <li>Educational media structuring</li>
+            <li>Weekly content + strategy</li>
+            <li>Full ad creative suite</li>
+            <li>Sonic branding identity</li>
+            <li>Monthly planning session</li>
+            <li>Unlimited minor revisions</li>
+            <li>3-month minimum</li>
           </ul>
         </div>
       </div>
@@ -546,20 +551,28 @@
         <h2>Let’s Build Something</h2>
 
         <p>
-          Interested in creator promos, cinematic media assets, livestream
-          systems, or AI-powered creator infrastructure?
+          Running paid social and want fresh video creative every month
+          without hiring a production team? Let's talk.
         </p>
       </div>
 
       <div class="contact-links">
-        <a href="https://x.com/_davedigital" target="_blank">X / Twitter</a>
+        <a href="https://x.com/_davedigital" target="_blank">
+          X / Twitter
+        </a>
 
-        <a href="mailto:djdjfrosty@gmail.com">Email</a>
+        <a href="https://instagram.com/_davedigital" target="_blank">
+          Instagram
+        </a>
 
-        <a href="https://www.youtube.com/@BillyGoatTales" target="_blank">
-          BillyGoatTales
+        <a href="mailto:djdjfrosty@gmail.com">
+          Email
         </a>
       </div>
     </section>
+
+    <footer>
+      Additional creative and creator ecosystem work available upon request.
+    </footer>
   </body>
 </html>
