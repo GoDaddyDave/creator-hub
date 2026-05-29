@@ -37,39 +37,10 @@
       }
 
       .hero {
-        position: relative;
-        min-height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: min(1180px, calc(100% - 2rem));
+        margin: auto;
+        padding: 5rem 0 3rem;
         text-align: center;
-      }
-
-      .hero video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.24;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 35%),
-          linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(5, 5, 5, 0.98));
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 1060px;
-        padding: 2rem;
-        margin: 0 auto;
       }
 
       .eyebrow {
@@ -101,6 +72,46 @@
         font-size: clamp(1.05rem, 2vw, 1.3rem);
         line-height: 1.7;
         text-align: center;
+      }
+
+      .hero-videos {
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .hero-video-card {
+        overflow: hidden;
+        background: linear-gradient(180deg, #121212, #0b0b0b);
+        border-radius: 24px;
+        border: 1px solid #222;
+      }
+
+      .hero-video-card video {
+        width: 100%;
+        height: 320px;
+        display: block;
+        object-fit: cover;
+        background: #090909;
+      }
+
+      .hero-video-copy {
+        padding: 1.25rem;
+        text-align: center;
+      }
+
+      .hero-video-copy h3 {
+        margin: 0 0 0.45rem;
+        font-size: 1.2rem;
+      }
+
+      .hero-video-copy p {
+        max-width: 540px;
+        margin: 0 auto;
+        color: #a8a8a8;
+        line-height: 1.6;
+        font-size: 0.95rem;
       }
 
       .buttons {
@@ -324,6 +335,18 @@
       }
 
       @media (max-width: 780px) {
+        .hero {
+          padding: 3.5rem 0 2rem;
+        }
+
+        .hero-videos {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-video-card video {
+          height: 260px;
+        }
+
         .section {
           padding: 4.75rem 0;
         }
@@ -346,25 +369,52 @@
 
   <body>
     <section class="hero">
-      <video autoplay muted loop playsinline>
-        <source src="/videos/reel.mp4" type="video/mp4" />
-      </video>
+      <div class="eyebrow">Cinematic AI Commercial Creative</div>
 
-      <div class="hero-content">
-        <div class="eyebrow">Cinematic AI Commercial Creative</div>
+      <h1>AI Video Commercials for Brands</h1>
 
-        <h1>AI Video Commercials for Brands</h1>
+      <p>
+        Monthly retainer-based cinematic ad creative for businesses running
+        paid social. Fresh 15–30 second video spots every month — no
+        production team required.
+      </p>
 
-        <p>
-          Monthly retainer-based cinematic ad creative for businesses running
-          paid social. Fresh 15–30 second video spots every month — no
-          production team required.
-        </p>
+      <div class="hero-videos">
+        <div class="hero-video-card">
+          <video autoplay muted loop playsinline controls>
+            <source src="/videos/milk-honey-spec.mp4" type="video/mp4" />
+          </video>
 
-        <div class="buttons">
-          <a href="#work" class="button primary">View Work</a>
-          <a href="#contact" class="button secondary">Book A Call</a>
+          <div class="hero-video-copy">
+            <h3>Milk + Honey Spa — Spec Ad</h3>
+            <p>
+              Custom cinematic spec ad built for Milk + Honey Houston.
+            </p>
+          </div>
         </div>
+
+        <div class="hero-video-card">
+          <video autoplay muted loop playsinline controls>
+            <source src="/videos/dermatouch-spec.mp4" type="video/mp4" />
+          </video>
+
+          <div class="hero-video-copy">
+            <h3>DermaTouch — Spec Ad</h3>
+            <p>
+              Custom cinematic spec ad built for a Houston-area skincare brand.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a href="#contact" class="button primary">
+          Want To See What We'd Make For Your Brand?
+        </a>
+
+        <a href="#pricing" class="button secondary">
+          View Monthly Options
+        </a>
       </div>
     </section>
 
@@ -409,77 +459,7 @@
       </div>
     </section>
 
-    <section id="work" class="section">
-      <div class="section-header">
-        <h2>Featured Work</h2>
-
-        <p>
-          Real spec ads and commercial creative built for Houston-area
-          businesses and creator brands.
-        </p>
-      </div>
-
-      <div class="media-grid">
-        <div class="media-card">
-          <video autoplay muted loop playsinline controls>
-            <source src="/videos/milk-honey-spec.mp4" type="video/mp4" />
-          </video>
-
-          <div class="media-copy">
-            <h3>Milk + Honey Spa — Spec Ad</h3>
-
-            <p>
-              Custom 15-second cinematic spec ad built for Milk + Honey Houston.
-              Character-consistent AI video with branded ingredient, voiceover,
-              and membership offer.
-            </p>
-          </div>
-        </div>
-
-        <div class="media-card">
-          <video autoplay muted loop playsinline controls>
-            <source src="/videos/skinspirit-spec.mp4" type="video/mp4" />
-          </video>
-
-          <div class="media-copy">
-            <h3>SkinSpirit — Spec Ad</h3>
-
-            <p>
-              15-second cinematic spec ad for SkinSpirit Rice Village.
-              Built from brand photography ingredients in Google Flow / Veo 3.
-            </p>
-          </div>
-        </div>
-
-        <div class="media-card">
-          <img src="/images/dashboard.png" alt="Livestream dashboard" />
-
-          <div class="media-copy">
-            <h3>Livestream Dashboard</h3>
-
-            <p>
-              Supporting portfolio work showcasing branded visual systems,
-              recurring production layouts, and organized broadcast flow.
-            </p>
-          </div>
-        </div>
-
-        <div class="media-card">
-          <img src="/images/sonic-branding.png" alt="Sonic branding assets" />
-
-          <div class="media-copy">
-            <h3>Sonic Branding</h3>
-
-            <p>
-              Custom songs, branded sound identity, and recurring audio systems
-              developed across multiple creator and business ecosystems.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+    <section id="pricing" class="section">
       <div class="section-header">
         <h2>Monthly Retainers</h2>
 
@@ -501,7 +481,7 @@
             <li>1 revision round each</li>
             <li>Music included</li>
             <li>Delivered by the 10th</li>
-            <li>3-month minimum</li>
+            <li>Month-to-month</li>
           </ul>
         </div>
 
@@ -519,7 +499,7 @@
             <li>2 revision rounds each</li>
             <li>Priority 48-hour turnaround</li>
             <li>Sonic branding included</li>
-            <li>3-month minimum</li>
+            <li>Month-to-month</li>
           </ul>
         </div>
 
@@ -534,15 +514,54 @@
             <li>Sonic branding identity</li>
             <li>Monthly planning session</li>
             <li>Unlimited minor revisions</li>
-            <li>3-month minimum</li>
+            <li>Month-to-month</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-header">
+        <h2>Additional Work</h2>
+
+        <p>
+          Supporting creative systems, branded media assets, and audio-visual
+          identity work built across creator and business ecosystems.
+        </p>
+      </div>
+
+      <div class="media-grid">
+        <div class="media-card">
+          <img src="/images/dashboard.png" alt="Livestream dashboard" />
+
+          <div class="media-copy">
+            <h3>Visual Systems</h3>
+
+            <p>
+              Supporting portfolio work showcasing branded visual systems,
+              recurring production layouts, and organized presentation flow.
+            </p>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <img src="/images/sonic-branding.png" alt="Sonic branding assets" />
+
+          <div class="media-copy">
+            <h3>Sonic Branding</h3>
+
+            <p>
+              Custom songs, branded sound identity, and recurring audio systems
+              developed across multiple creator and business ecosystems.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section contact">
       <div class="section-header">
-        <h2>Let’s Build Something</h2>
+        <h2>Want To See What We'd Make For Your Brand?</h2>
 
         <p>
           Running paid social and want fresh video creative every month
