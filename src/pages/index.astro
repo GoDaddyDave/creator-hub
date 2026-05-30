@@ -36,9 +36,13 @@
         color: inherit;
       }
 
-      .hero {
+      .hero,
+      .section {
         width: min(1180px, calc(100% - 2rem));
         margin: auto;
+      }
+
+      .hero {
         padding: 5rem 0 3rem;
         text-align: center;
       }
@@ -81,14 +85,19 @@
         gap: 1.25rem;
       }
 
-      .hero-video-card {
-        overflow: hidden;
+      .video-card,
+      .card,
+      .price-card,
+      .media-card {
         background: linear-gradient(180deg, #121212, #0b0b0b);
-        border-radius: 24px;
         border: 1px solid #222;
+        border-radius: 24px;
+        overflow: hidden;
       }
 
-      .hero-video-card video {
+      .video-card video,
+      .media-card video,
+      .media-card img {
         width: 100%;
         height: 320px;
         display: block;
@@ -96,18 +105,21 @@
         background: #090909;
       }
 
-      .hero-video-copy {
+      .video-copy,
+      .media-copy {
         padding: 1.25rem;
         text-align: center;
       }
 
-      .hero-video-copy h3 {
+      .video-copy h3,
+      .media-copy h3 {
         margin: 0 0 0.45rem;
         font-size: 1.2rem;
       }
 
-      .hero-video-copy p {
-        max-width: 540px;
+      .video-copy p,
+      .media-copy p {
+        max-width: 620px;
         margin: 0 auto;
         color: #a8a8a8;
         line-height: 1.6;
@@ -140,13 +152,23 @@
         background: rgba(255, 255, 255, 0.04);
       }
 
-      .button:hover {
+      .button:hover,
+      .card:hover,
+      .price-card:hover,
+      .video-card:hover,
+      .media-card:hover {
         transform: translateY(-3px);
+        border-color: #555;
+      }
+
+      .card,
+      .price-card,
+      .video-card,
+      .media-card {
+        transition: 0.25s ease;
       }
 
       .section {
-        width: min(1180px, calc(100% - 2rem));
-        margin: auto;
         padding: 6rem 0;
       }
 
@@ -173,24 +195,28 @@
         text-align: center;
       }
 
+      .spec-grid,
+      .pricing,
       .grid {
         display: grid;
+        gap: 1.25rem;
+      }
+
+      .spec-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.15rem;
+      }
+
+      .pricing {
+        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
       }
 
       .card {
-        background: linear-gradient(180deg, #121212, #0c0c0c);
-        border: 1px solid #222;
-        border-radius: 24px;
         padding: 1.65rem;
-        transition: 0.25s ease;
         text-align: center;
-      }
-
-      .card:hover {
-        transform: translateY(-4px);
-        border-color: #555;
       }
 
       .card h3 {
@@ -205,58 +231,8 @@
         font-size: 0.98rem;
       }
 
-      .media-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1.25rem;
-      }
-
-      .media-card {
-        grid-column: span 6;
-        overflow: hidden;
-        background: linear-gradient(180deg, #121212, #0b0b0b);
-        border-radius: 24px;
-        border: 1px solid #222;
-      }
-
-      .media-card img,
-      .media-card video {
-        width: 100%;
-        height: 260px;
-        display: block;
-        object-fit: cover;
-        background: #090909;
-      }
-
-      .media-copy {
-        padding: 1.35rem;
-        text-align: center;
-      }
-
-      .media-copy h3 {
-        margin: 0 0 0.55rem;
-        font-size: 1.28rem;
-      }
-
-      .media-copy p {
-        max-width: 680px;
-        margin: 0 auto;
-        color: #a8a8a8;
-        line-height: 1.65;
-        font-size: 0.98rem;
-      }
-
-      .pricing {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-        gap: 1.25rem;
-      }
-
       .price-card {
         position: relative;
-        background: linear-gradient(180deg, #121212, #0b0b0b);
-        border: 1px solid #222;
-        border-radius: 24px;
         padding: 1.75rem;
         text-align: center;
       }
@@ -299,6 +275,12 @@
         text-align: left;
       }
 
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
       .contact {
         text-align: center;
         padding-bottom: 7rem;
@@ -334,34 +316,37 @@
         font-size: 0.9rem;
       }
 
-      @media (max-width: 780px) {
-        .hero {
-          padding: 3.5rem 0 2rem;
-        }
-
-        .hero-videos {
+      @media (max-width: 900px) {
+        .hero-videos,
+        .spec-grid,
+        .media-grid {
           grid-template-columns: 1fr;
         }
 
-        .hero-video-card video {
+        .video-card video,
+        .media-card video,
+        .media-card img {
           height: 260px;
+        }
+
+        .popular {
+          transform: none;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .hero {
+          padding: 3.5rem 0 2rem;
         }
 
         .section {
           padding: 4.75rem 0;
         }
 
-        .media-card {
-          grid-column: span 12;
-        }
-
-        .media-card img,
-        .media-card video {
-          height: 240px;
-        }
-
-        .popular {
-          transform: none;
+        .video-card video,
+        .media-card video,
+        .media-card img {
+          height: 230px;
         }
       }
     </style>
@@ -375,34 +360,30 @@
 
       <p>
         Monthly retainer-based cinematic ad creative for businesses running
-        paid social. Fresh 15–30 second video spots every month — no
-        production team required.
+        paid social. Fresh 15–30 second video spots every month — no production
+        team required.
       </p>
 
       <div class="hero-videos">
-        <div class="hero-video-card">
+        <div class="video-card">
           <video autoplay muted loop playsinline controls>
             <source src="/videos/milk-honey-spec.mp4" type="video/mp4" />
           </video>
 
-          <div class="hero-video-copy">
+          <div class="video-copy">
             <h3>Milk + Honey Spa — Spec Ad</h3>
-            <p>
-              Custom cinematic spec ad built for Milk + Honey Houston.
-            </p>
+            <p>Custom cinematic spec ad built for Milk + Honey Houston.</p>
           </div>
         </div>
 
-        <div class="hero-video-card">
+        <div class="video-card">
           <video autoplay muted loop playsinline controls>
-            <source src="/videos/dermatouch-spec.mp4" type="video/mp4" />
+            <source src="/videos/skinspirit-spec.mp4" type="video/mp4" />
           </video>
 
-          <div class="hero-video-copy">
-            <h3>DermaTouch — Spec Ad</h3>
-            <p>
-              Custom cinematic spec ad built for a Houston-area skincare brand.
-            </p>
+          <div class="video-copy">
+            <h3>SkinSpirit — Spec Ad</h3>
+            <p>Custom cinematic spec ad built for SkinSpirit Rice Village.</p>
           </div>
         </div>
       </div>
@@ -415,6 +396,51 @@
         <a href="#pricing" class="button secondary">
           View Monthly Options
         </a>
+      </div>
+    </section>
+
+    <section class="section" id="spec-ads">
+      <div class="section-header">
+        <h2>More Spec Ads</h2>
+        <p>
+          A growing proof-of-work library of short cinematic ad concepts built
+          for real Houston-area businesses.
+        </p>
+      </div>
+
+      <div class="spec-grid">
+        <div class="video-card">
+          <video autoplay muted loop playsinline controls>
+            <source src="/videos/dermatouch-spec.mp4" type="video/mp4" />
+          </video>
+
+          <div class="video-copy">
+            <h3>DermaTouch RN — Spec Ad</h3>
+            <p>Custom cinematic spec ad built for a Houston skincare brand.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <video autoplay muted loop playsinline controls>
+            <source src="/videos/dream-aesthetics-spec.mp4" type="video/mp4" />
+          </video>
+
+          <div class="video-copy">
+            <h3>Dream Aesthetics — Spec Ad</h3>
+            <p>Short-form cinematic ad creative for an aesthetics brand.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <video autoplay muted loop playsinline controls>
+            <source src="/videos/galleria-aesthetics-spec.mp4" type="video/mp4" />
+          </video>
+
+          <div class="video-copy">
+            <h3>Galleria Aesthetics — Spec Ad</h3>
+            <p>AI-powered commercial concept for a local aesthetics business.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -431,26 +457,23 @@
       <div class="grid">
         <div class="card">
           <h3>AI Video Commercials</h3>
-
           <p>
-            Monthly ad creative for businesses running Facebook, Instagram,
-            and YouTube ads. Fresh 15s and 30s cinematic spots — custom to
-            your brand, delivered monthly.
+            Monthly ad creative for businesses running Facebook, Instagram, and
+            YouTube ads. Fresh 15s and 30s cinematic spots — custom to your
+            brand, delivered monthly.
           </p>
         </div>
 
         <div class="card">
           <h3>Spec Ad Previews</h3>
-
           <p>
-            Not sure what you'd get? I build a real 15-second spec ad for
-            your brand before you commit to anything. See the work first.
+            Not sure what you'd get? I build a real short spec ad for your brand
+            before you commit to anything. See the work first.
           </p>
         </div>
 
         <div class="card">
           <h3>Sonic Branding</h3>
-
           <p>
             Custom music and sound identity for brands that want a complete
             audio-visual package.
@@ -472,7 +495,6 @@
       <div class="pricing">
         <div class="price-card">
           <h3>Starter</h3>
-
           <div class="price">$1,000/mo</div>
 
           <ul>
@@ -489,7 +511,6 @@
           <div class="popular-badge">Most Popular</div>
 
           <h3>Growth</h3>
-
           <div class="price">$2,500/mo</div>
 
           <ul>
@@ -505,7 +526,6 @@
 
         <div class="price-card">
           <h3>Full System</h3>
-
           <div class="price">$5,000/mo</div>
 
           <ul>
@@ -532,11 +552,10 @@
 
       <div class="media-grid">
         <div class="media-card">
-          <img src="/images/dashboard.png" alt="Livestream dashboard" />
+          <img src="/images/dashboard.png" alt="Visual systems" />
 
           <div class="media-copy">
             <h3>Visual Systems</h3>
-
             <p>
               Supporting portfolio work showcasing branded visual systems,
               recurring production layouts, and organized presentation flow.
@@ -549,7 +568,6 @@
 
           <div class="media-copy">
             <h3>Sonic Branding</h3>
-
             <p>
               Custom songs, branded sound identity, and recurring audio systems
               developed across multiple creator and business ecosystems.
@@ -564,23 +582,17 @@
         <h2>Want To See What We'd Make For Your Brand?</h2>
 
         <p>
-          Running paid social and want fresh video creative every month
-          without hiring a production team? Let's talk.
+          Running paid social and want fresh video creative every month without
+          hiring a production team? Let's talk.
         </p>
       </div>
 
       <div class="contact-links">
-        <a href="https://x.com/_davedigital" target="_blank">
-          X / Twitter
-        </a>
-
+        <a href="https://x.com/_davedigital" target="_blank">X / Twitter</a>
         <a href="https://instagram.com/_davedigital" target="_blank">
           Instagram
         </a>
-
-        <a href="mailto:djdjfrosty@gmail.com">
-          Email
-        </a>
+        <a href="mailto:djdjfrosty@gmail.com">Email</a>
       </div>
     </section>
 
